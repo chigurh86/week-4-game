@@ -1,0 +1,52 @@
+body{
+	background-color: pink; 
+}
+h1{
+	font-size: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+h3{
+	padding-bottom: 5px;
+}
+.original-number{
+	background-color: green;
+	color:darkblue;
+	font-size: 30px;
+	width: 150px;
+	padding: 25px;
+	float: left;
+}
+.score{
+	float: left;
+	margin-left: 10px;
+	background-color: lightblue;
+	line-height: 23px;
+	padding: 17px;
+	padding-right: 25px;
+}
+.losses{
+}
+img{
+	width: 10%;
+	border: solid 5px black;
+	background-color: white;
+}
+ul{
+	clear: both;
+	float: left;
+	text-decoration: none;
+	list-style: none;
+	padding-left: 0px;
+	padding: 15px 0px 15px 0px;
+}
+li{
+	display: inline;
+}
+.your-score{
+	background-color: lightblue;
+	clear: both;
+	padding: 5px;
+	width: 290px;
+
+}
