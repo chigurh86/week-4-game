@@ -1,46 +1,88 @@
- $(document).ready(function(){
- var randomGen = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"];
- var userAddedGuess;
- var wins; 
- var losses;
- var i;
- var randomNum;
- // var totalGuesses = userAddedGuessg + userAddedGuesso + userAddedGuessp + userAddedGuessb;
-function randomSelect () {
-			var i = Math.floor(Math.random() * 21) + 0;
-			var randomNum = randomGen[i];
-		};
-		
-function didYouWin () {
-	if (totalGuesses === 39) {
-		var wins = wins++
+ var userAddedGuess = 0;
+ var wins = 0; 
+ var losses = 0;
+ var totalGuesses = 0;
+ var ggem = 0;
+ var ogem = 0;
+ var pgem = 0;
+ var bluegem = 0;
+
+ // all functions
+
+ function startGame () {
+	
+	ggem = Math.floor(Math.random() * 21) + 1;
+ 	ogem = Math.floor(Math.random() * 21) + 1;
+ 	pgem = Math.floor(Math.random() * 21) + 1;
+ 	bluegem = Math.floor(Math.random() * 21) + 1;
+ 	mainVar = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+ 	totalGuesses = 0;
+ 	$(".main-var").html(mainVar);
+ 	$(".score-point").html(0);
+ 	$(".losses").html(0);
+ 	$(".wins").html(0);
+	wins = 0 ;
+	losses = 0 ;
+ }
+
+ function reset (){
+ 	totalGuesses = 0;
+ 	$(".score-point").html(0);
+ 	return;
+ }
+
+ function totalUp(gemvalue){
+ 		totalGuesses += gemvalue;
+ 		$(".score-point").html(totalGuesses);
+
+	if (totalGuesses === mainVar) {
+		reset ();
+		$(".wins").html(wins++ + 1);
+		console.log(wins);
 		};
 
-	if (totalGuesses > 39) {
-			var losses = losses++
+	if (totalGuesses > mainVar) {
+		reset ();
+		$(".losses").html(losses++ + 1);
+		console.log(losses);
 		};
+
 }
+function gameOver (){
+ 	if (wins === 5) {
+ 		alert("You Won! Play again?");
+ 		startGame ();
+ 	};
+ 	if (losses === 5) {
+ 		alert("You Lost! Play again?");
+ 		startGame ();
+ 	}
+};
+
+ $(document).ready(function(){
+	startGame ();
+
+// all keys
 
 $(".ggem").on("click",function(e){
-        var ggem = randomNum
-        var userAddedGuessg = parseInt(userAddedGuess) + parseInt(ggem);
-        console.log (randomNum);
+        totalUp(ggem);
+        gameOver ();
     });
+
 $(".ogem").on("click",function(e){
-      	var ogem = randomNum
-      	var userAddedGuesso = parseInt(userAddedGuess) + parseInt(ogem);
+      	totalUp(ogem);
+      	gameOver ();
     });
+
 $(".pgem").on("click",function(e){
-		  	var pgem = randomNum;
-		  	var userAddedGuessp = parseInt(userAddedGuess) + parseInt(pgem);
+	  	totalUp(pgem);
+	  	gameOver ();
     });
+
 $(".bluegem").on("click",function(e){
-      	var bluegem = randomNum;
-      	var userAddedGuessb = parseInt(userAddedGuess) + parseInt(bluegem);
+      	totalUp(bluegem);
+      	gameOver ();
     });
 
-$(".wins").html(wins);
-
-$(".losses").html(losses);
 
 });

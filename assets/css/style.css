@@ -1,5 +1,9 @@
 body{
-	background-color: pink; 
+	background-color: url("../assets/images/desert-landscape.jpg");
+}
+.container{
+	margin: 0 auto;
+	text-align: center;
 }
 h1{
 	font-size: 30px;
@@ -11,25 +15,27 @@ h3{
 }
 .original-number{
 	background-color: green;
-	color:darkblue;
+	margin: 0 auto;
+	color:white;
 	font-size: 30px;
 	width: 150px;
 	padding: 25px;
-	float: left;
+	/*float: left;*/
 }
 .score{
-	float: left;
-	margin-left: 10px;
+	/*float: left;*/
+	margin: 0 auto;
+	margin-top: 10px;
 	background-color: lightblue;
+	width: 150px;
 	line-height: 23px;
-	padding: 17px;
+	padding: 25px;
 	padding-right: 25px;
 }
 .losses{
 }
 img{
 	width: 10%;
-	border: solid 5px black;
 	background-color: white;
 }
 ul{
@@ -48,5 +54,7 @@ li{
 	clear: both;
 	padding: 5px;
 	width: 290px;
+	margin: 0 auto;
+
 
 }
