@@ -59,7 +59,7 @@ function gameOver (){
  	}
 };
 
- $(document).ready(function(){
+$(document).ready(function(){
 	startGame ();
 
 // all keys
